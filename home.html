@@ -1,100 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+alert("Hi");
+</script>
   <meta charset="UTF-8">
   <title>Document</title>
 </head>
 <body>
-  <script type="text/javascript">
-  var start_timestamp;
-  var recognizing = false; 
-  var recognition = new webkitSpeechRecognition();
-  recognition.continuous = true;
-  recognition.interimResults = true;
-
-var final_transcript = "";
-
-  recognition.onstart = function() {
-    recognizing = true;
-    //showInfo('info_speak_now');
-    //start_img.src = '/intl/en/chrome/assets/common/images/content/mic-animate.gif';
-  };
-
-  recognition.onerror = function(event) {
-    if (event.error == 'no-speech') {
-      //start_img.src = '/intl/en/chrome/assets/common/images/content/mic.gif';
-      //showInfo('info_no_speech');
-      ignore_onend = true;
-    }
-    if (event.error == 'audio-capture') {
-      //start_img.src = '/intl/en/chrome/assets/common/images/content/mic.gif';
-      //showInfo('info_no_microphone');
-      ignore_onend = true;
-    }
-    if (event.error == 'not-allowed') {
-      if (event.timeStamp - start_timestamp < 100) {
-        //showInfo('info_blocked');
-      } else {
-        //showInfo('info_denied');
-      }
-      ignore_onend = true;
-    }
-  }
-
-    recognition.onresult = function(event) {
-      console.log("Results...");
-      //debugger;
-    var interim_transcript = '';
-    if (typeof(event.results) == 'undefined') {
-      recognition.onend = null;
-      recognition.stop();
-      //upgrade();
-      return;
-    }
-    for (var i = event.resultIndex; i < event.results.length; ++i) {
-      if (event.results[i].isFinal) {
-        final_transcript += event.results[i][0].transcript;
-        console.log("FINAL: ", final_transcript);
-      } else {
-        interim_transcript += event.results[i][0].transcript;
-      }
-    }
-    console.log("INTERIM :", interim_transcript)
-    //final_transcript = capitalize(final_transcript);
-    //final_span.innerHTML = linebreak(final_transcript);
-    //interim_span.innerHTML = linebreak(interim_transcript);
-    // if (final_transcript || interim_transcript) {
-    //   showButtons('inline-block');
-    // }
-  };
-
-  function startLis () {
-
-     if (recognizing) {
-      console.log("STOPPED");
-      recognition.stop();
-      return;
-    }
-      console.log("Started Now...");
-      recognition.lang ='en-US';
-      recognition.start();
-      //ignore_onend = false;
-      // final_span.innerHTML = '';
-      // interim_span.innerHTML = '';
-      // start_img.src = '/intl/en/chrome/assets/common/images/content/mic-slash.gif';
-      // showInfo('info_allow');
-      // showButtons('none');
-      //start_timestamp = event.timeStamp;
-    }
-
-var langs =[['Afrikaans',       ['af-ZA']],
- ['Bahasa Indonesia',['id-ID']],
- ['Bahasa Melayu',   ['ms-MY']],
- ['Català',          ['ca-ES']],
- ['Ceština',         ['cs-CZ']],
- ['Dansk',           ['da-DK']],
- ['Deutsch',         ['de-DE']],
- ['English',         ['en-AU', 'Australia']]];
-  </script>
+<b>BABA</b>
 </body>
 </html>
