@@ -25,7 +25,7 @@ var Article = app.resource = restful.model('article', mongoose.Schema({
         title: String,
         tags: [],
         content: mongoose.Schema.Types.Mixed,
-        image:String,
+        imageURL:String,
         author: String,
         creationDate: {
             type: Date,
